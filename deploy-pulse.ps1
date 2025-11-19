@@ -39,7 +39,8 @@ $swaVersion = npx @azure/static-web-apps-cli --version 2>&1
 if ($LASTEXITCODE -ne 0) {
     Write-Host "⚠️  SWA CLI não encontrado. Instalando..." -ForegroundColor Yellow
     npm install -g @azure/static-web-apps-cli
-} else {
+}
+else {
     Write-Host "✅ SWA CLI versão: $swaVersion" -ForegroundColor Green
 }
 
@@ -68,7 +69,8 @@ if ($CreateNew) {
         --login-with-github
 
     Write-Host "✅ Static Web App criado!" -ForegroundColor Green
-} else {
+}
+else {
     # Deploy para app existente
     Write-Host "🚀 Fazendo deploy..." -ForegroundColor Cyan
 
@@ -80,10 +82,11 @@ if ($CreateNew) {
         Write-Host "Ou faça login com Azure CLI:" -ForegroundColor Yellow
         Write-Host "az login" -ForegroundColor White
         Write-Host ""
-        
+
         # Tentar deploy via SWA CLI
         swa deploy --app-location . --output-location . --env $Environment
-    } else {
+    }
+    else {
         # Deploy com token
         swa deploy `
             --app-location . `
@@ -98,7 +101,8 @@ if ($CreateNew) {
         Write-Host ""
         Write-Host "🌐 URL: https://pulse.avila.inc" -ForegroundColor Cyan
         Write-Host "🤖 Agentes IA: https://pulse.avila.inc/AI" -ForegroundColor Cyan
-    } else {
+    }
+    else {
         Write-Host ""
         Write-Host "❌ Erro no deploy!" -ForegroundColor Red
         exit 1

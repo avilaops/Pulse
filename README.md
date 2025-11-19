@@ -50,12 +50,12 @@ PULSE_API_KEY=your-key-here
 
 ## 📚 API Endpoints
 
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/v1/pulse/status` | Status do sistema |
-| POST | `/api/v1/pulse/events` | Enviar evento |
-| GET | `/api/v1/metrics` | Listar métricas |
-| WS | `/ws` | WebSocket real-time |
+| Método | Endpoint               | Descrição           |
+| ------ | ---------------------- | ------------------- |
+| GET    | `/api/v1/pulse/status` | Status do sistema   |
+| POST   | `/api/v1/pulse/events` | Enviar evento       |
+| GET    | `/api/v1/metrics`      | Listar métricas     |
+| WS     | `/ws`                  | WebSocket real-time |
 
 ## 🔗 Integrações
 
@@ -129,7 +129,7 @@ MIT License - veja [LICENSE](../LICENSE)
 
 ---
 
-**Desenvolvido por:** [Avila Inc](https://avila.inc)  
-**Status:** Em Desenvolvimento  
-**URL:** https://pulse.avila.inc  
+**Desenvolvido por:** [Avila Inc](https://avila.inc)
+**Status:** Em Desenvolvimento
+**URL:** https://pulse.avila.inc
 **Suporte:** support@avila.inc
