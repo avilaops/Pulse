@@ -521,9 +521,17 @@
             border-radius: 50%;
         }
 
-        .dot-red { background: #ff5f56; }
-        .dot-yellow { background: #ffbd2e; }
-        .dot-green { background: #27c93f; }
+        .dot-red {
+            background: #ff5f56;
+        }
+
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+
+        .dot-green {
+            background: #27c93f;
+        }
 
         .dashboard-content {
             display: grid;
@@ -686,6 +694,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="/dashboard.html">Dashboard Live</a></li>
                 <li><a href="#use-cases">Casos de Uso</a></li>
                 <li><a href="#stats">Métricas</a></li>
                 <li><a href="/AI">Agentes IA</a></li>
@@ -703,7 +712,7 @@
                 Dashboards inteligentes, métricas consolidadas e analytics avançados para decisões baseadas em dados
             </p>
             <div class="hero-buttons">
-                <a href="#dashboard" class="primary-btn">Ver Dashboard</a>
+                <a href="/dashboard.html" class="primary-btn">Ver Dashboard Interativo</a>
                 <a href="/AI" class="secondary-btn">Agentes IA</a>
             </div>
         </div>
@@ -906,7 +915,7 @@
                 Junte-se ao ecossistema Avila e tenha acesso a telemetria de nível empresarial
             </p>
             <div class="hero-buttons">
-                <a href="https://portal.avila.inc" class="primary-btn reveal">Acessar Portal</a>
+                <a href="/dashboard.html" class="primary-btn reveal">Ver Dashboard ao Vivo</a>
                 <a href="/AI" class="secondary-btn reveal">Explorar Agentes IA</a>
             </div>
         </div>
@@ -1038,11 +1047,11 @@
         function animateValue(id, start, end, duration, suffix = '') {
             const element = document.getElementById(id);
             if (!element) return;
-            
+
             const range = end - start;
             const increment = range / (duration / 16);
             let current = start;
-            
+
             const timer = setInterval(() => {
                 current += increment;
                 if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
