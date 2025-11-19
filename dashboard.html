@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Avila Pulse</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
-    
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    
+
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -297,6 +299,7 @@
                 transform: translateX(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateX(0);
                 opacity: 1;
@@ -364,10 +367,13 @@
         }
 
         @keyframes livePulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
                 transform: scale(1);
             }
+
             50% {
                 opacity: 0.5;
                 transform: scale(1.2);
@@ -382,7 +388,8 @@
             flex-wrap: wrap;
         }
 
-        select, input[type="date"] {
+        select,
+        input[type="date"] {
             padding: 0.5rem 1rem;
             border-radius: 8px;
             border: 1px solid var(--border);
@@ -414,6 +421,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -589,7 +597,7 @@
         function generateTimeLabels(period) {
             const labels = [];
             const points = period === '1h' ? 12 : period === '24h' ? 24 : 30;
-            
+
             for (let i = points - 1; i >= 0; i--) {
                 const date = new Date();
                 if (period === '1h') {
@@ -610,7 +618,7 @@
         function generateData(points, min, max, trend = 0) {
             const data = [];
             let current = min + Math.random() * (max - min);
-            
+
             for (let i = 0; i < points; i++) {
                 current += (Math.random() - 0.5) * (max - min) * 0.1 + trend;
                 current = Math.max(min, Math.min(max, current));
@@ -737,14 +745,14 @@
             const range = end - start;
             let current = start;
             const increment = range / (duration / 16);
-            
+
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= end) {
                     current = end;
                     clearInterval(timer);
                 }
-                
+
                 if (id === 'avgLatency' || id === 'errorRate') {
                     obj.innerHTML = Math.round(current) + (id === 'avgLatency' ? '<span style="font-size: 1rem;">ms</span>' : '<span style="font-size: 1rem;">%</span>');
                 } else {
@@ -769,14 +777,14 @@
                 charts.forEach(chart => {
                     chart.data.labels.shift();
                     chart.data.labels.push(new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }));
-                    
+
                     chart.data.datasets.forEach(dataset => {
                         dataset.data.shift();
                         const lastValue = dataset.data[dataset.data.length - 1];
                         const newValue = lastValue + (Math.random() - 0.5) * lastValue * 0.1;
                         dataset.data.push(Math.max(0, newValue));
                     });
-                    
+
                     chart.update('none');
                 });
 
@@ -798,13 +806,13 @@
             const container = document.getElementById('notifications');
             const notif = document.createElement('div');
             notif.className = `notification ${type}`;
-            
+
             const icons = {
                 success: '✅',
                 warning: '⚠️',
                 danger: '🚨'
             };
-            
+
             notif.innerHTML = `
                 <span class="notification-icon">${icons[type]}</span>
                 <div class="notification-content">
@@ -813,9 +821,9 @@
                 </div>
                 <button class="notification-close" onclick="this.parentElement.remove()">×</button>
             `;
-            
+
             container.appendChild(notif);
-            
+
             setTimeout(() => notif.remove(), 5000);
         }
 
@@ -828,14 +836,14 @@
                 avgLatency: document.getElementById('avgLatency').textContent,
                 errorRate: document.getElementById('errorRate').textContent
             };
-            
+
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
             a.download = `pulse-metrics-${Date.now()}.json`;
             a.click();
-            
+
             showNotification('success', 'Exportado', 'Dados exportados com sucesso!');
         }
 
@@ -843,10 +851,10 @@
         function changeChartPeriod(chartName, period) {
             event.target.parentElement.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
+
             // Update chart labels and data based on period
             const points = period === '1h' ? 12 : period === '24h' ? 24 : 30;
-            
+
             if (chartName === 'events') {
                 eventsChart.data.labels = generateTimeLabels(period);
                 eventsChart.data.datasets[0].data = generateData(points, 500, 2000, 10);
@@ -875,7 +883,7 @@
         // Initialize
         updateMetrics();
         simulateWebSocket();
-        
+
         // Set default dates
         document.getElementById('endDate').valueAsDate = new Date();
         const startDate = new Date();
@@ -883,4 +891,5 @@
         document.getElementById('startDate').valueAsDate = startDate;
     </script>
 </body>
+
 </html>

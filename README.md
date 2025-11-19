@@ -2,114 +2,112 @@
 
 > Hub de telemetria executiva com dashboards em tempo real, métricas consolidadas e analytics avançados
 
-[![Deploy](https://img.shields.io/badge/Deploy-Azure%20SWA-blue.svg)](https://pulse.avila.inc)
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow.svg)](https://status.avila.inc)
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-blue.svg)](https://avilaops.github.io/Pulse)
+[![Status](https://img.shields.io/badge/Status-Live-brightgreen.svg)](https://avilaops.github.io/Pulse)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ## ✨ Features
 
-- ⚡ **Dashboards em Tempo Real** - Visualização instantânea de métricas críticas
-- 📈 **Métricas Consolidadas** - Agregação de dados de múltiplas fontes
-- 🔄 **Event Streaming** - Captura e processamento de eventos em tempo real
-- 🎯 **Analytics Executivos** - Insights acionáveis para decisão estratégica
-- 🔔 **Alertas Inteligentes** - Notificações automáticas com ML
-- 🔗 **Integrações Nativas** - Conectado ao ecossistema Avila
+- ⚡ **Dashboard Interativo** - Visualização em tempo real com Chart.js
+- 📊 **4 Gráficos Dinâmicos** - Events, Users, Latency, Errors
+- 🔄 **WebSocket Simulation** - Atualizações automáticas a cada 5 segundos
+- 📈 **Métricas Animadas** - Contadores com efeito visual
+- 📥 **Export JSON** - Baixe todos os dados das métricas
+- 🎨 **Dark Theme Premium** - Design moderno com gradientes
+- 📱 **Responsive** - Funciona em desktop e mobile
 
-## 🤖 Agentes IA
+## 🤖 AI Agents (Documentação)
 
-O Pulse conta com 9 agentes especializados:
+Documentação de 9 agentes especializados em `AI/`:
 
-1. **Analytics AI** - Análise de padrões e geração de insights
-2. **Forecasting AI** - Previsões com séries temporais
-3. **Anomaly Detector** - Detecção automática de anomalias
-4. **Optimization AI** - Sugestões de otimização
-5. **Report Generator** - Relatórios automatizados
-6. **Query Assistant** - Interface conversacional NLP
-7. **Smart Alert Manager** - Gerenciamento inteligente de alertas
-8. **Capacity Planner** - Planejamento de capacidade
-9. **Integration Orchestrator** - Orquestração de integrações
+1. **Analytics AI** - Análise de padrões
+2. **Forecasting AI** - Previsões
+3. **Anomaly Detector** - Detecção de anomalias
+4. **Optimization AI** - Otimizações
+5. **Report Generator** - Relatórios
+6. **Query Assistant** - NLP queries
+7. **Smart Alert Manager** - Alertas
+8. **Capacity Planner** - Planejamento
+9. **Integration Orchestrator** - Integrações
 
 ## 🚀 Deploy
 
-### Azure Static Web Apps
+### GitHub Pages
+
+Deploy automático via GitHub Actions quando você fizer push para `main`:
 
 ```bash
-# Deploy com SWA CLI
-swa deploy --app-location . --output-location . --env production
-
-# Ou via GitHub Actions (automático)
+git add .
+git commit -m "feat: Update Pulse"
+git push origin main
 ```
 
-### Variáveis de Ambiente
+Acesse: **https://avilaops.github.io/Pulse**
 
-```bash
-PULSE_WS_URL=wss://pulse.avila.inc/ws
-PULSE_API_URL=https://pulse.avila.inc/api
-PULSE_API_KEY=your-key-here
-```
-
-## 📚 API Endpoints
-
-| Método | Endpoint               | Descrição           |
-| ------ | ---------------------- | ------------------- |
-| GET    | `/api/v1/pulse/status` | Status do sistema   |
-| POST   | `/api/v1/pulse/events` | Enviar evento       |
-| GET    | `/api/v1/metrics`      | Listar métricas     |
-| WS     | `/ws`                  | WebSocket real-time |
-
-## 🔗 Integrações
-
-Integrado com:
-- Portal Avila
-- Avila Vault
-- On Platform
-- Darwin
-- AgentHub
-- Todos os produtos do ecossistema
-
-## 📊 Métricas
-
-- **Latência**: < 50ms
-- **Uptime**: 99.9% SLA
-- **Throughput**: 1M+ events/segundo
-- **Monitoramento**: 24/7
-
-## 🏗️ Arquitetura
-
-```
-Frontend (HTML/CSS/JS)
-    ↓
-Azure Static Web Apps
-    ↓
-API Backend (FastAPI/Node.js)
-    ↓
-WebSocket Server (Real-time)
-    ↓
-Event Stream (Kafka/Redis)
-    ↓
-TimeSeries DB (InfluxDB/TimescaleDB)
-    ↓
-AI Agents (Python/TensorFlow)
-```
-
-## 🛠️ Desenvolvimento Local
+### Desenvolvimento Local
 
 ```bash
 # Servir localmente
 npx http-server . -p 8080
 
-# Ou com SWA CLI
-swa start . --port 8080
+# Ou com Python
+python -m http.server 8080
 ```
 
 Acesse: http://localhost:8080
 
-## 📖 Documentação
+## 📊 Dashboard Features
 
-- [API Reference](https://pulse.avila.inc/docs)
-- [WebSocket Protocol](https://pulse.avila.inc/docs/ws)
-- [AI Agents Guide](https://pulse.avila.inc/docs/agents)
-- [Integration Guide](https://pulse.avila.inc/docs/integration)
+- **4 Gráficos Chart.js**
+  - Events/min (linha com gradiente roxo)
+  - Active Users (linha com gradiente verde)
+  - Avg Latency (linha com gradiente amarelo)
+  - Errors by Type (rosca - 4xx, 5xx, Timeouts, Network)
+
+- **Métricas Animadas**
+  - Total Events: contador animado
+  - Active Users: contador animado
+  - Avg Latency: contador animado
+  - Error Rate: percentual animado
+
+- **Controles**
+  - Filtro por período (1h, 24h, 7d, 30d)
+  - Seletor de tipo de métrica
+  - Range de datas
+  - Export para JSON
+  - Notificações toast
+
+- **WebSocket Simulation**
+  - Atualiza dados a cada 5 segundos
+  - Simula dados em tempo real
+  - Efeitos de transição suaves
+
+## 🏗️ Estrutura
+
+```
+Pulse/
+├── index.html              # Landing page
+├── dashboard.html          # Dashboard interativo
+├── API.md                  # Documentação da API
+├── .github/
+│   └── workflows/
+│       └── pages.yml       # GitHub Actions
+└── AI/                     # Agentes IA (docs)
+```
+
+## 📚 Documentação
+
+- [Dashboard Interativo](https://avilaops.github.io/Pulse/dashboard.html)
+- [API Reference](API.md)
+- [Repositório GitHub](https://github.com/avilaops/Pulse)
+
+## 🎨 Tecnologias
+
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Charts**: Chart.js 4.4.0
+- **Icons**: Iconoir
+- **Deploy**: GitHub Pages
+- **CI/CD**: GitHub Actions
 
 ## 🔒 Segurança
 
@@ -130,6 +128,6 @@ MIT License - veja [LICENSE](../LICENSE)
 ---
 
 **Desenvolvido por:** [Avila Inc](https://avila.inc)
-**Status:** Em Desenvolvimento
-**URL:** https://pulse.avila.inc
-**Suporte:** support@avila.inc
+**Status:** Live no GitHub Pages
+**URL:** https://avilaops.github.io/Pulse
+**Repositório:** https://github.com/avilaops/Pulse

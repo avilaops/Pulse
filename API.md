@@ -490,15 +490,15 @@ X-RateLimit-Reset: 1637325600
 
 ## Error Codes
 
-| Code | Description |
-|------|-------------|
-| 400 | Bad Request - Invalid parameters |
-| 401 | Unauthorized - Invalid or missing token |
-| 403 | Forbidden - Insufficient permissions |
-| 404 | Not Found - Resource not found |
-| 429 | Too Many Requests - Rate limit exceeded |
-| 500 | Internal Server Error |
-| 503 | Service Unavailable |
+| Code | Description                             |
+| ---- | --------------------------------------- |
+| 400  | Bad Request - Invalid parameters        |
+| 401  | Unauthorized - Invalid or missing token |
+| 403  | Forbidden - Insufficient permissions    |
+| 404  | Not Found - Resource not found          |
+| 429  | Too Many Requests - Rate limit exceeded |
+| 500  | Internal Server Error                   |
+| 503  | Service Unavailable                     |
 
 **Error Response Format:**
 ```json
