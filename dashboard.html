@@ -21,30 +21,33 @@
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --success: #22c55e;
-            --warning: #eab308;
-            --danger: #ef4444;
-            --dark: #0a0b0d;
-            --dark-light: #1a1d26;
-            --card-bg: rgba(26, 29, 38, 0.8);
-            --text: #e4e4e7;
-            --text-muted: #a1a1aa;
-            --border: rgba(102, 126, 234, 0.2);
+            --primary: #007AFF;
+            --secondary: #5856D6;
+            --success: #34C759;
+            --warning: #FF9500;
+            --danger: #FF3B30;
+            --dark: #1D1D1F;
+            --dark-light: #F5F5F7;
+            --card-bg: #FFFFFF;
+            --text: #1D1D1F;
+            --text-muted: #6E6E73;
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0a0b0d 0%, #1a1d26 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: #F5F5F7;
             color: var(--text);
             min-height: 100vh;
+            font-weight: 400;
+            letter-spacing: -0.01em;
         }
 
         /* Header */
         .header {
-            background: rgba(10, 11, 13, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
             position: sticky;
@@ -65,9 +68,10 @@
             align-items: center;
             gap: 0.75rem;
             font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
+            font-weight: 600;
+            color: #1D1D1F;
             text-decoration: none;
+            letter-spacing: -0.02em;
         }
 
         .header-controls {
@@ -89,19 +93,19 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: #007AFF;
             color: white;
         }
 
         .btn-secondary {
-            background: var(--card-bg);
-            color: var(--text);
+            background: white;
+            color: #1D1D1F;
             border: 1px solid var(--border);
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         /* Sidebar */
@@ -113,7 +117,7 @@
 
         .sidebar {
             width: 250px;
-            background: var(--card-bg);
+            background: white;
             border-right: 1px solid var(--border);
             padding: 2rem 1rem;
             min-height: calc(100vh - 70px);
@@ -140,7 +144,7 @@
 
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
-            background: rgba(102, 126, 234, 0.1);
+            background: #F5F5F7;
             color: var(--primary);
         }
 
@@ -159,13 +163,13 @@
         }
 
         .metric-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
+            background: white;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 1.5rem;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .metric-card::before {
@@ -174,8 +178,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 0px;
+            background: transparent;
         }
 
         .metric-header {
@@ -198,12 +202,11 @@
 
         .metric-value {
             font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, white, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 700;
+            color: #1D1D1F;
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
         .metric-change {
@@ -230,10 +233,16 @@
         }
 
         .chart-card {
-            background: var(--card-bg);
+            background: white;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .chart-card canvas {
+            height: 300px !important;
+            width: 100% !important;
         }
 
         .chart-header {
@@ -246,7 +255,8 @@
         .chart-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: white;
+            color: #1D1D1F;
+            letter-spacing: -0.01em;
         }
 
         .chart-controls {
@@ -328,7 +338,7 @@
         .notification-title {
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: white;
+            color: #1D1D1F;
         }
 
         .notification-message {
@@ -392,9 +402,10 @@
             padding: 0.5rem 1rem;
             border-radius: 8px;
             border: 1px solid var(--border);
-            background: var(--card-bg);
-            color: var(--text);
+            background: white;
+            color: #1D1D1F;
             font-size: 0.875rem;
+            font-weight: 500;
         }
 
         /* Responsive */

@@ -1,331 +1,700 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Avila Pulse - Hub de telemetria executiva com dashboards em tempo real, métricas consolidadas e analytics inteligentes para decisões baseadas em dados.">
-    <meta name="keywords"
-        content="analytics, telemetria, dashboard, métricas, business intelligence, data visualization">
-    <meta name="author" content="Avila Inc">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Avila Pulse - Telemetria Executiva">
-    <meta property="og:description"
-        content="Dashboards em tempo real e métricas consolidadas para decisões inteligentes">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://avilaops.github.io/Pulse">
-    <meta property="og:image" content="https://avilaops.github.io/Pulse/og-image.svg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Avila Pulse - Telemetria Executiva">
-    <meta name="twitter:description" content="Dashboards em tempo real e métricas consolidadas">
-    <meta name="twitter:image" content="https://avilaops.github.io/Pulse/og-image.svg">
-
-    <title>Avila Pulse - Telemetria Executiva</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-
-    <!-- Iconoir Icons -->
+    <title>Avila Pulse - Telemetria Executiva em Tempo Real</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav id="mainNav">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">📊</span> Pulse
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="/dashboard.html">Dashboard</a></li>
+            </ul>
+            <a href="/dashboard.html" class="cta-nav">Try it Free</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-orb orb-1"></div>
+            <div class="hero-orb orb-2"></div>
+            <div class="hero-orb orb-3"></div>
+        </div>
+
+        <div class="hero-content animate-on-scroll">
+            <div class="hero-badge">✨ Introducing Avila Pulse 2.0 - Now with TypeScript</div>
+            <h1 id="hero-title">Think Different.<br>Decide Faster.</h1>
+            <p class="hero-subtitle">Transform data into insights with real-time telemetry.<br>Built for teams that move at the speed of thought.</p>
+            
+            <div class="hero-cta-group">
+                <a href="/dashboard.html" class="btn btn-primary">
+                    Get Started <i class="iconoir-arrow-right"></i>
+                </a>
+                <a href="#showcase" class="btn btn-secondary">
+                    Watch Demo <i class="iconoir-play"></i>
+                </a>
+            </div>
+
+            <div class="hero-visual">
+                <div class="device-mockup">
+                    <div class="mockup-screen">
+                        <div class="floating-card card-1" style="width: 200px;">
+                            <div style="font-size: 36px; font-weight: 700; background: linear-gradient(135deg, #0A84FF, #BF5AF2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">98.7%</div>
+                            <div style="font-size: 14px; color: #98989D; margin-top: 4px;">Uptime SLA</div>
+                        </div>
+                        <div class="floating-card card-2" style="width: 220px;">
+                            <div style="font-size: 36px; font-weight: 700; background: linear-gradient(135deg, #34C759, #FFD60A); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">+24.5%</div>
+                            <div style="font-size: 14px; color: #98989D; margin-top: 4px;">Performance Boost</div>
+                        </div>
+                        <div class="floating-card card-3" style="width: 180px;">
+                            <div style="font-size: 36px; font-weight: 700; background: linear-gradient(135deg, #FF375F, #FFD60A); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">2.3ms</div>
+                            <div style="font-size: 14px; color: #98989D; margin-top: 4px;">Avg Latency</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="section-header animate-on-scroll">
+            <div class="section-badge">🚀 Powerful Features</div>
+            <h2>Everything you need.<br>Nothing you don't.</h2>
+            <p class="section-description">Built for teams that move fast and need insights even faster.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-time Analytics</h3>
+                <p>Monitor your metrics as they happen. No delays, no lag. Just pure, instant data visualization.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🎯</div>
+                <h3>Smart Alerts</h3>
+                <p>Get notified about what matters. AI-powered anomaly detection keeps you ahead of issues.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">📊</div>
+                <h3>Beautiful Dashboards</h3>
+                <p>Data visualization that's actually beautiful. Charts that tell stories, not just numbers.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🔒</div>
+                <h3>Enterprise Security</h3>
+                <p>Bank-level encryption. SOC 2 compliant. Your data is safer than Fort Knox.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🌐</div>
+                <h3>Global Scale</h3>
+                <p>Built to handle millions of events per second. Scale from startup to enterprise seamlessly.</p>
+            </div>
+
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon">🤖</div>
+                <h3>AI Agents</h3>
+                <p>Autonomous monitoring agents that learn your patterns and optimize automatically.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="showcase" class="showcase stats-section">
+        <div class="showcase-content">
+            <div class="showcase-text animate-on-scroll">
+                <h2>Performance that speaks for itself.</h2>
+                <p>Join thousands of companies who've transformed their decision-making process with Pulse.</p>
+                <a href="/dashboard.html" class="btn btn-primary">
+                    See it in action <i class="iconoir-arrow-right"></i>
+                </a>
+
+                <div class="showcase-stats">
+                    <div class="stat">
+                        <div class="stat-number" data-target="2.3" data-suffix="ms">0ms</div>
+                        <div class="stat-label">Average latency</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="99.99" data-suffix="%">0%</div>
+                        <div class="stat-label">Uptime SLA</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="10000000" data-suffix="">0</div>
+                        <div class="stat-label">Events per second</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number" data-target="50000" data-suffix="">0</div>
+                        <div class="stat-label">Happy users</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-visual animate-on-scroll">
+                <div class="dashboard-preview">
+                    <div class="preview-header">
+                        <div class="preview-dot" style="background: #FF5F56;"></div>
+                        <div class="preview-dot" style="background: #FFBD2E;"></div>
+                        <div class="preview-dot" style="background: #27C93F;"></div>
+                    </div>
+                    <div class="preview-content">
+                        <div class="chart-bars">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="section-header animate-on-scroll">
+            <div class="section-badge">💬 Testimonials</div>
+            <h2>Loved by teams worldwide.</h2>
+            <p class="section-description">Don't just take our word for it.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial animate-on-scroll">
+                <p class="testimonial-text">"Pulse transformed how we monitor our infrastructure. The real-time insights have saved us countless hours."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SC</div>
+                    <div class="author-info">
+                        <h4>Sarah Chen</h4>
+                        <p>CTO, TechCorp</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial animate-on-scroll">
+                <p class="testimonial-text">"The most intuitive analytics platform I've ever used. Beautiful design meets powerful functionality."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Marcus Rodriguez</h4>
+                        <p>VP Engineering, DataFlow</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial animate-on-scroll">
+                <p class="testimonial-text">"We switched from three different tools to just Pulse. Our team is happier and we're making better decisions faster."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EK</div>
+                    <div class="author-info">
+                        <h4>Emma Kim</h4>
+                        <p>Head of Product, StartupX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content animate-on-scroll">
+            <h2>Ready to think different?</h2>
+            <p>Start your free trial today. No credit card required.</p>
+            <a href="/dashboard.html" class="btn btn-cta">
+                Get Started Free <i class="iconoir-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>📊 Avila Pulse</h3>
+                <p>Executive telemetry that transforms data into decisions. Built for teams that move fast.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="iconoir-twitter"></i></a>
+                    <a href="https://github.com/avilaops/Pulse" class="social-link"><i class="iconoir-github"></i></a>
+                    <a href="#" class="social-link"><i class="iconoir-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="/dashboard.html">Dashboard</a></li>
+                    <li><a href="/AI">AI Agents</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="/API.md">API Docs</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Avila Inc. All rights reserved. Made with ❤️ for teams that ship fast.</p>
+        </div>
+    </footer>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --primary: #667eea;
-            --primary-dark: #5568d3;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --gold: #d4af37;
-            --dark: #0a0b0d;
-            --dark-light: #1a1d26;
-            --text: #e4e4e7;
-            --text-muted: #a1a1aa;
+            --electric-blue: #0A84FF;
+            --deep-purple: #BF5AF2;
+            --neon-pink: #FF375F;
+            --cyber-gold: #FFD60A;
+            --dark-bg: #000000;
+            --dark-card: #1C1C1E;
+            --dark-elevated: #2C2C2E;
+            --pure-white: #FFFFFF;
+            --gray-text: #98989D;
+            --border-subtle: rgba(255, 255, 255, 0.1);
         }
 
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0a0b0d 0%, #1a1d26 100%);
-            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            color: var(--pure-white);
+            background: var(--dark-bg);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            background: rgba(10, 11, 13, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            font-size: 2rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.1);
-            }
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 0.4rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-            transition: all 0.3s;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 2rem 6rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+        .cursor-trail {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--electric-blue);
             pointer-events: none;
+            z-index: 9998;
+            mix-blend-mode: screen;
+            transition: opacity 0.3s, transform 0.3s;
         }
 
         #particles-canvas {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            z-index: 0;
             pointer-events: none;
         }
 
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--pure-white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 5px var(--electric-blue)); }
+            50% { filter: drop-shadow(0 0 20px var(--electric-blue)); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--pure-white);
+        }
+
+        .cta-nav {
+            background: linear-gradient(135deg, var(--electric-blue), var(--deep-purple));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 16px rgba(10, 132, 255, 0.3);
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 24px rgba(10, 132, 255, 0.5);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 40px 80px;
+        }
+
+        .hero-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float-orb 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--electric-blue), transparent);
+            top: -300px;
+            right: -300px;
+        }
+
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--neon-pink), transparent);
+            bottom: -200px;
+            left: -200px;
+            animation-delay: 2s;
+        }
+
+        .orb-3 {
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, var(--deep-purple), transparent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            33% { transform: translate(50px, -50px) scale(1.2); opacity: 0.5; }
+            66% { transform: translate(-30px, 30px) scale(0.8); opacity: 0.2; }
+        }
+
         .hero-content {
+            max-width: 1100px;
+            text-align: center;
             position: relative;
             z-index: 1;
         }
 
-        .hero-title {
-            font-size: 4rem;
+        .hero-badge {
+            display: inline-block;
+            background: rgba(10, 132, 255, 0.15);
+            border: 1px solid rgba(10, 132, 255, 0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--electric-blue);
+            margin-bottom: 32px;
+            animation: badge-glow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+        }
+
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(10, 132, 255, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(10, 132, 255, 0.6); }
+        }
+
+        h1 {
+            font-size: clamp(52px, 10vw, 120px);
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, white, var(--accent));
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--electric-blue) 50%, var(--deep-purple) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 0.8s ease-out;
+            animation: gradient-shift 8s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 700px;
+            font-size: clamp(20px, 3vw, 32px);
+            color: var(--gray-text);
+            margin-bottom: 48px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
-        .hero-buttons {
+        .hero-cta-group {
             display: flex;
-            gap: 1.5rem;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            margin-bottom: 80px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .primary-btn {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
-            text-decoration: none;
+        .btn {
+            padding: 18px 40px;
+            border-radius: 14px;
+            font-size: 18px;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .secondary-btn {
-            background: rgba(102, 126, 234, 0.1);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 12px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            transition: all 0.3s;
-            display: inline-block;
+            transition: all 0.4s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .secondary-btn:hover {
-            background: rgba(102, 126, 234, 0.2);
-            border-color: var(--primary);
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
         }
 
-        /* Features Section */
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--electric-blue), var(--deep-purple));
+            color: white;
+            box-shadow: 0 8px 32px rgba(10, 132, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 48px rgba(10, 132, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--pure-white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--electric-blue);
+            transform: translateY(-4px);
+        }
+
+        .device-mockup {
+            max-width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 50px 150px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--dark-card);
+            padding: 20px;
+            animation: float-device 6s ease-in-out infinite;
+        }
+
+        @keyframes float-device {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .mockup-screen {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mockup-screen::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(10, 132, 255, 0.1), transparent);
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .floating-card {
+            position: absolute;
+            background: rgba(28, 28, 30, 0.9);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            animation: float-card 4s ease-in-out infinite;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes float-card {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-25px) scale(1.05); }
+        }
+
+        .card-1 { top: 50px; left: 50px; }
+        .card-2 { top: 220px; right: 50px; animation-delay: 1.3s; }
+        .card-3 { bottom: 50px; left: 80px; animation-delay: 2.6s; }
+
+        section { position: relative; z-index: 1; }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .features {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, transparent, rgba(102, 126, 234, 0.05));
+            padding: 160px 40px;
+            background: var(--dark-bg);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            max-width: 800px;
+            margin: 0 auto 80px;
         }
 
-        .section-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
+        .section-badge {
+            display: inline-block;
+            background: rgba(191, 90, 242, 0.15);
+            border: 1px solid rgba(191, 90, 242, 0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--deep-purple);
+            margin-bottom: 24px;
         }
 
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto;
+        h2 {
+            font-size: clamp(36px, 5vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            font-size: 22px;
+            color: var(--gray-text);
+            line-height: 1.5;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .feature-card {
-            background: rgba(26, 29, 38, 0.5);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            border-radius: 16px;
-            padding: 2.5rem;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            background: var(--dark-card);
+            border-radius: 28px;
+            padding: 48px;
+            transition: all 0.5s;
+            border: 1px solid var(--border-subtle);
             position: relative;
             overflow: hidden;
         }
@@ -337,77 +706,226 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, var(--electric-blue), var(--deep-purple));
             transform: scaleX(0);
-            transition: transform 0.3s;
+            transition: transform 0.5s;
         }
+
+        .feature-card:hover::before { transform: scaleX(1); }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
+            transform: translateY(-12px);
+            box-shadow: 0 32px 80px rgba(10, 132, 255, 0.3);
+            border-color: rgba(10, 132, 255, 0.5);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
+            font-size: 48px;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 4px 12px rgba(10, 132, 255, 0.4));
         }
 
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: white;
+        .feature-card h3 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
-        .feature-description {
-            color: var(--text-muted);
+        .feature-card p {
+            color: var(--gray-text);
+            font-size: 17px;
             line-height: 1.7;
         }
 
-        /* Stats Section */
-        .stats {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        .showcase {
+            padding: 160px 40px;
+            background: var(--dark-elevated);
+            position: relative;
+            overflow: hidden;
         }
 
-        .stats-grid {
+        .showcase::before {
+            content: '';
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(10, 132, 255, 0.2) 0%, transparent 70%);
+            top: -400px;
+            right: -200px;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+
+        .showcase-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            text-align: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .stat-card {
-            padding: 2rem;
+        .showcase-text p {
+            font-size: 22px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .showcase-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .stat-number {
-            font-size: 3.5rem;
+            font-size: 64px;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--gold));
+            background: linear-gradient(135deg, var(--electric-blue), var(--cyber-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 12px;
         }
 
         .stat-label {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 500;
+            color: var(--gray-text);
+            font-size: 16px;
         }
 
-        /* CTA Section */
+        .dashboard-preview {
+            width: 100%;
+            border-radius: 28px;
+            background: rgba(28, 28, 30, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 28px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5);
+        }
+
+        .preview-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .preview-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+
+        .preview-content {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-bars {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            height: 220px;
+        }
+
+        .bar {
+            width: 48px;
+            background: linear-gradient(to top, var(--electric-blue), var(--deep-purple));
+            border-radius: 10px 10px 0 0;
+            animation: growBar 1.5s ease-out infinite;
+        }
+
+        .bar:nth-child(1) { height: 60%; }
+        .bar:nth-child(2) { height: 85%; animation-delay: 0.2s; }
+        .bar:nth-child(3) { height: 45%; animation-delay: 0.4s; }
+        .bar:nth-child(4) { height: 95%; animation-delay: 0.6s; }
+        .bar:nth-child(5) { height: 70%; animation-delay: 0.8s; }
+
+        @keyframes growBar {
+            0%, 100% { transform: scaleY(1); opacity: 0.8; }
+            50% { transform: scaleY(1.1); opacity: 1; }
+        }
+
+        .testimonials {
+            padding: 160px 40px;
+            background: var(--dark-bg);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--dark-card);
+            border-radius: 28px;
+            padding: 48px;
+            transition: all 0.4s;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .testimonial:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+            border-color: rgba(191, 90, 242, 0.5);
+        }
+
+        .testimonial-text {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--electric-blue), var(--deep-purple));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .author-info p {
+            font-size: 15px;
+            color: var(--gray-text);
+        }
+
         .cta-section {
-            padding: 8rem 2rem;
+            padding: 200px 40px;
+            background: linear-gradient(135deg, var(--electric-blue) 0%, var(--deep-purple) 100%);
             text-align: center;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
             position: relative;
             overflow: hidden;
         }
@@ -415,688 +933,297 @@
         .cta-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
-            pointer-events: none;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            top: -500px;
+            left: -200px;
+            animation: float-orb 15s ease-in-out infinite;
         }
 
         .cta-content {
-            position: relative;
-            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .cta-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
+        .cta-section h2 {
+            margin-bottom: 28px;
         }
 
-        .cta-description {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
+        .cta-section p {
+            font-size: 26px;
+            margin-bottom: 48px;
+            opacity: 0.95;
         }
 
-        /* Footer */
+        .btn-cta {
+            background: white;
+            color: var(--electric-blue);
+            padding: 22px 56px;
+            font-size: 20px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-6px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
         footer {
-            background: rgba(10, 11, 13, 0.95);
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            padding: 4rem 2rem 2rem;
+            background: var(--dark-card);
+            padding: 100px 40px 50px;
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
-        .footer-section h3 {
+        .footer-brand h3 {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-text);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.25rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 1px solid var(--border-subtle);
         }
 
-        .footer-section ul {
+        .social-link:hover {
+            background: var(--electric-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(10, 132, 255, 0.4);
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-links ul {
             list-style: none;
         }
 
-        .footer-section ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a {
-            color: var(--text-muted);
+        .footer-links a {
+            color: var(--gray-text);
             text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(102, 126, 234, 0.1);
-            color: var(--text-muted);
-        }
-
-        /* Live Dashboard Preview */
-        .dashboard-preview {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(10, 11, 13, 0.8), rgba(26, 29, 38, 0.8));
-        }
-
-        .dashboard-mockup {
-            background: rgba(26, 29, 38, 0.8);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            border-radius: 20px;
-            padding: 2rem;
-            max-width: 1000px;
-            margin: 3rem auto 0;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-        }
-
-        .dashboard-header {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .dashboard-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .dot-red {
-            background: #ff5f56;
-        }
-
-        .dot-yellow {
-            background: #ffbd2e;
-        }
-
-        .dot-green {
-            background: #27c93f;
-        }
-
-        .dashboard-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .metric-box {
-            background: rgba(102, 126, 234, 0.05);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .metric-box:hover {
-            transform: scale(1.05);
-            border-color: var(--primary);
-        }
-
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .metric-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        /* Use Cases */
-        .use-cases {
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg, rgba(102, 126, 234, 0.05), transparent);
-        }
-
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .use-case-card {
-            background: rgba(26, 29, 38, 0.5);
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 14px;
             transition: all 0.3s;
         }
 
-        .use-case-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        .footer-links a:hover {
+            color: var(--electric-blue);
+            transform: translateX(4px);
         }
 
-        .use-case-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 50px;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 15px;
         }
 
-        .use-case-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 0.75rem;
-        }
-
-        .use-case-desc {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 11, 13, 0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1rem;
-                border-top: 1px solid rgba(102, 126, 234, 0.2);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cta-title {
-                font-size: 2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .dashboard-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s, transform 0.6s;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .showcase-content, .footer-content { grid-template-columns: 1fr; }
+            h1 { font-size: 56px; }
+            h2 { font-size: 40px; }
         }
     </style>
-</head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <a href="/" class="logo">
-                <span class="logo-icon">📊</span>
-                <span>Avila Pulse</span>
-            </a>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="/dashboard.html">Dashboard Live</a></li>
-                <li><a href="#use-cases">Casos de Uso</a></li>
-                <li><a href="#stats">Métricas</a></li>
-                <li><a href="/AI">Agentes IA</a></li>
-                <li><a href="https://portal.avila.inc" class="cta-button">Portal</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <canvas id="particles-canvas"></canvas>
-        <div class="hero-content">
-            <h1 class="hero-title">Telemetria Executiva em Tempo Real</h1>
-            <p class="hero-subtitle">
-                Dashboards inteligentes, métricas consolidadas e analytics avançados para decisões baseadas em dados
-            </p>
-            <div class="hero-buttons">
-                <a href="/dashboard.html" class="primary-btn">Ver Dashboard Interativo</a>
-                <a href="/AI" class="secondary-btn">Agentes IA</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title reveal">Recursos Poderosos</h2>
-                <p class="section-subtitle reveal">Tudo que você precisa para monitorar e otimizar seu negócio</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card reveal">
-                    <span class="feature-icon">⚡</span>
-                    <h3 class="feature-title">Dashboards em Tempo Real</h3>
-                    <p class="feature-description">
-                        Visualize métricas críticas atualizadas instantaneamente com gráficos interativos e
-                        customizáveis
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <span class="feature-icon">📈</span>
-                    <h3 class="feature-title">Métricas Consolidadas</h3>
-                    <p class="feature-description">
-                        Agregue dados de múltiplas fontes em um único painel executivo com KPIs estratégicos
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title">Event Streaming</h3>
-                    <p class="feature-description">
-                        Capture e processe eventos em tempo real com latência mínima e alta disponibilidade
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <span class="feature-icon">🎯</span>
-                    <h3 class="feature-title">Analytics Executivos</h3>
-                    <p class="feature-description">
-                        Análises avançadas com insights acionáveis para tomada de decisão estratégica
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <span class="feature-icon">🔔</span>
-                    <h3 class="feature-title">Alertas Inteligentes</h3>
-                    <p class="feature-description">
-                        Notificações automáticas baseadas em thresholds personalizáveis e machine learning
-                    </p>
-                </div>
-
-                <div class="feature-card reveal">
-                    <span class="feature-icon">🔗</span>
-                    <h3 class="feature-title">Integrações Nativas</h3>
-                    <p class="feature-description">
-                        Conecte-se facilmente com todos os produtos do ecossistema Avila via API e WebSocket
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Dashboard Preview -->
-    <section id="dashboard" class="dashboard-preview">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title reveal">Dashboard ao Vivo</h2>
-                <p class="section-subtitle reveal">Visualize métricas em tempo real com nossa interface intuitiva</p>
-            </div>
-
-            <div class="dashboard-mockup reveal">
-                <div class="dashboard-header">
-                    <span class="dashboard-dot dot-red"></span>
-                    <span class="dashboard-dot dot-yellow"></span>
-                    <span class="dashboard-dot dot-green"></span>
-                </div>
-                <div class="dashboard-content">
-                    <div class="metric-box">
-                        <div class="metric-value" id="active-users">0</div>
-                        <div class="metric-label">Usuários Ativos</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value" id="requests-per-sec">0</div>
-                        <div class="metric-label">Requests/s</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value" id="response-time">0ms</div>
-                        <div class="metric-label">Tempo de Resposta</div>
-                    </div>
-                    <div class="metric-box">
-                        <div class="metric-value" id="error-rate">0%</div>
-                        <div class="metric-label">Taxa de Erro</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section id="use-cases" class="use-cases">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title reveal">Casos de Uso</h2>
-                <p class="section-subtitle reveal">Pulse se adapta a diferentes necessidades e setores</p>
-            </div>
-
-            <div class="use-case-grid">
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">🏢</div>
-                    <h3 class="use-case-title">Empresas SaaS</h3>
-                    <p class="use-case-desc">
-                        Monitore saúde de aplicações, performance de APIs e satisfação de usuários em tempo real.
-                    </p>
-                </div>
-
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">🛒</div>
-                    <h3 class="use-case-title">E-commerce</h3>
-                    <p class="use-case-desc">
-                        Acompanhe vendas, conversões, abandono de carrinho e comportamento de compra instantaneamente.
-                    </p>
-                </div>
-
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">📱</div>
-                    <h3 class="use-case-title">Apps Mobile</h3>
-                    <p class="use-case-desc">
-                        Telemetria completa de uso, crashes, performance e engajamento dos seus aplicativos móveis.
-                    </p>
-                </div>
-
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">🏦</div>
-                    <h3 class="use-case-title">Fintech</h3>
-                    <p class="use-case-desc">
-                        Monitore transações, detecção de fraudes, compliance e métricas financeiras críticas 24/7.
-                    </p>
-                </div>
-
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">🎮</div>
-                    <h3 class="use-case-title">Gaming</h3>
-                    <p class="use-case-desc">
-                        Analytics de jogadores, economia do jogo, performance de servidores e eventos em tempo real.
-                    </p>
-                </div>
-
-                <div class="use-case-card reveal">
-                    <div class="use-case-icon">🏥</div>
-                    <h3 class="use-case-title">HealthTech</h3>
-                    <p class="use-case-desc">
-                        Monitoramento de dispositivos médicos, telemetria de pacientes e alertas críticos de saúde.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title reveal">Números que Impressionam</h2>
-            </div>
-
-            <div class="stats-grid">
-                <div class="stat-card reveal">
-                    <div class="stat-number">
-                        < 50ms</div>
-                            <div class="stat-label">Latência Média</div>
-                    </div>
-
-                    <div class="stat-card reveal">
-                        <div class="stat-number">99.9%</div>
-                        <div class="stat-label">Uptime SLA</div>
-                    </div>
-
-                    <div class="stat-card reveal">
-                        <div class="stat-number">1M+</div>
-                        <div class="stat-label">Events/Segundo</div>
-                    </div>
-
-                    <div class="stat-card reveal">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Monitoramento</div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title reveal">Pronto para Transformar Seus Dados?</h2>
-            <p class="cta-description reveal">
-                Junte-se ao ecossistema Avila e tenha acesso a telemetria de nível empresarial
-            </p>
-            <div class="hero-buttons">
-                <a href="/dashboard.html" class="primary-btn reveal">Ver Dashboard ao Vivo</a>
-                <a href="/AI" class="secondary-btn reveal">Explorar Agentes IA</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>📊 Avila Pulse</h3>
-                <p style="color: var(--text-muted); line-height: 1.8;">
-                    Hub de telemetria executiva com dashboards em tempo real e analytics avançados.
-                </p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Produtos</h3>
-                <ul>
-                    <li><a href="https://portal.avila.inc">Portal Avila</a></li>
-                    <li><a href="https://vault.avila.inc">Avila Vault</a></li>
-                    <li><a href="https://on.avila.inc">On Platform</a></li>
-                    <li><a href="https://darwin.avila.inc">Darwin</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Recursos</h3>
-                <ul>
-                    <li><a href="/AI">Agentes IA</a></li>
-                    <li><a href="https://pulse.avila.inc/docs">Documentação</a></li>
-                    <li><a href="https://pulse.avila.inc/api">API Reference</a></li>
-                    <li><a href="https://status.avila.inc">Status</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Empresa</h3>
-                <ul>
-                    <li><a href="https://avila.inc">Sobre</a></li>
-                    <li><a href="https://avila.inc/contact">Contato</a></li>
-                    <li><a href="https://github.com/avilaops">GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Avila Inc. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
+    <script src="app.ts"></script>
     <script>
-        // Mobile menu toggle
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileToggle?.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileToggle.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileToggle?.classList.remove('active');
-            });
-        });
-
-        // Particles animation
-        const canvas = document.getElementById('particles-canvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-
-            const particles = [];
-            const particleCount = 50;
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * canvas.width;
-                    this.y = Math.random() * canvas.height;
-                    this.size = Math.random() * 2 + 1;
-                    this.speedX = Math.random() * 0.5 - 0.25;
-                    this.speedY = Math.random() * 0.5 - 0.25;
-                    this.opacity = Math.random() * 0.5 + 0.2;
-                }
-
-                update() {
-                    this.x += this.speedX;
-                    this.y += this.speedY;
-
-                    if (this.x > canvas.width) this.x = 0;
-                    if (this.x < 0) this.x = canvas.width;
-                    if (this.y > canvas.height) this.y = 0;
-                    if (this.y < 0) this.y = canvas.height;
-                }
-
-                draw() {
-                    ctx.fillStyle = `rgba(102, 126, 234, ${this.opacity})`;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
+        // Particles System
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particles-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.mouse = { x: 0, y: 0 };
+                this.init();
             }
 
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-
-            function animateParticles() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(particle => {
-                    particle.update();
-                    particle.draw();
+            init() {
+                this.resize();
+                this.createParticles();
+                this.animate();
+                window.addEventListener('resize', () => this.resize());
+                window.addEventListener('mousemove', (e) => {
+                    this.mouse.x = e.clientX;
+                    this.mouse.y = e.clientY;
                 });
-                requestAnimationFrame(animateParticles);
             }
 
-            animateParticles();
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
 
-            window.addEventListener('resize', () => {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-            });
-        }
-
-        // Live dashboard metrics animation
-        function animateValue(id, start, end, duration, suffix = '') {
-            const element = document.getElementById(id);
-            if (!element) return;
-
-            const range = end - start;
-            const increment = range / (duration / 16);
-            let current = start;
-
-            const timer = setInterval(() => {
-                current += increment;
-                if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
-                    current = end;
-                    clearInterval(timer);
+            createParticles() {
+                const colors = ['#0A84FF', '#BF5AF2', '#FF375F', '#FFD60A'];
+                for (let i = 0; i < 80; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.8,
+                        vy: (Math.random() - 0.5) * 0.8,
+                        size: Math.random() * 3 + 1,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        alpha: Math.random() * 0.5 + 0.2
+                    });
                 }
-                element.textContent = Math.floor(current) + suffix;
-            }, 16);
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    const dx = this.mouse.x - p.x;
+                    const dy = this.mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 150) {
+                        const force = (150 - dist) / 150;
+                        p.vx += dx * force * 0.0008;
+                        p.vy += dy * force * 0.0008;
+                    }
+
+                    if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+
+                    p.vx *= 0.99;
+                    p.vy *= 0.99;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = p.color;
+                    this.ctx.globalAlpha = p.alpha;
+                    this.ctx.fill();
+                    this.ctx.globalAlpha = 1;
+                });
+
+                // Connect particles
+                for (let i = 0; i < this.particles.length; i++) {
+                    for (let j = i + 1; j < this.particles.length; j++) {
+                        const dx = this.particles[i].x - this.particles[j].x;
+                        const dy = this.particles[i].y - this.particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 120) {
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                            this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                            this.ctx.strokeStyle = this.particles[i].color;
+                            this.ctx.globalAlpha = (1 - dist / 120) * 0.15;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.stroke();
+                            this.ctx.globalAlpha = 1;
+                        }
+                    }
+                }
+
+                requestAnimationFrame(() => this.animate());
+            }
         }
 
-        // Observe dashboard section
-        const dashboardObserver = new IntersectionObserver((entries) => {
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateValue('active-users', 0, 12847, 2000);
-                    animateValue('requests-per-sec', 0, 3542, 2000);
-                    animateValue('response-time', 0, 45, 2000, 'ms');
-                    animateValue('error-rate', 0, 0.03, 2000, '%');
-                    dashboardObserver.unobserve(entry.target);
+                    entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-        const dashboardSection = document.querySelector('.dashboard-preview');
-        if (dashboardSection) {
-            dashboardObserver.observe(dashboardSection);
-        }
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-        // Reveal on scroll animation
-        const revealElements = document.querySelectorAll('.reveal');
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.pageYOffset > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
 
-        const revealOnScroll = () => {
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight * 0.85) {
-                    element.classList.add('active');
+        // Stats Counter
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stats = entry.target.querySelectorAll('.stat-number');
+                    stats.forEach(stat => {
+                        const target = parseFloat(stat.dataset.target);
+                        const suffix = stat.dataset.suffix || '';
+                        let current = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            if (suffix === '%') {
+                                stat.textContent = current.toFixed(2) + suffix;
+                            } else if (suffix === 'ms') {
+                                stat.textContent = current.toFixed(1) + suffix;
+                            } else if (target > 1000000) {
+                                stat.textContent = (current / 1000000).toFixed(1) + 'M+';
+                            } else if (target > 1000) {
+                                stat.textContent = (current / 1000).toFixed(0) + 'K+';
+                            } else {
+                                stat.textContent = Math.floor(current) + suffix;
+                            }
+                        }, 20);
+                    });
+                    statsObserver.unobserve(entry.target);
                 }
             });
-        };
+        }, { threshold: 0.5 });
 
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) statsObserver.observe(statsSection);
 
-        // Smooth scroll for anchor links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1106,7 +1233,12 @@
                 }
             });
         });
+
+        // Initialize
+        new ParticleSystem();
+
+        console.log('%c🚀 Avila Pulse', 'font-size: 28px; font-weight: bold; background: linear-gradient(135deg, #0A84FF, #BF5AF2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;');
+        console.log('%cThink Different. Decide Faster.', 'font-size: 16px; color: #98989D;');
     </script>
 </body>
-
 </html>
