@@ -202,6 +202,16 @@
             transform: scaleX(1);
         }
 
+        .agent-card.featured {
+            background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(191, 90, 242, 0.1));
+            border: 2px solid rgba(10, 132, 255, 0.3);
+        }
+
+        .agent-card.featured::before {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
         .agent-icon {
             font-size: 3rem;
             margin-bottom: 1.5rem;
@@ -257,6 +267,19 @@
             background: rgba(234, 179, 8, 0.15);
             color: #eab308;
             border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+
+        .agent-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .agent-link:hover {
+            color: white;
         }
 
         /* Footer */
@@ -327,6 +350,25 @@
     <section class="agents-section">
         <div class="container">
             <div class="agents-grid">
+                <!-- AI Unified Studio - NOVO! -->
+                <div class="agent-card featured" onclick="window.open('https://gr.avila.inc', '_blank')">
+                    <span class="agent-icon">🚀</span>
+                    <h3 class="agent-name">AI Unified Studio</h3>
+                    <p class="agent-description">
+                        Plataforma All-in-One para IA: Chat com LLMs (Ollama + DeepSeek), Geração de Imagens (Stable Diffusion) e Ferramentas de PDF. Sistema de cache inteligente que torna requisições 100x mais rápidas.
+                    </p>
+                    <div class="agent-tags">
+                        <span class="tag">LLM Chat</span>
+                        <span class="tag">Stable Diffusion</span>
+                        <span class="tag">PDF Tools</span>
+                        <span class="tag">100x Faster</span>
+                    </div>
+                    <span class="agent-status status-active">● Ativo</span>
+                    <a href="https://gr.avila.inc" target="_blank" class="agent-link">
+                        Acessar Platform →
+                    </a>
+                </div>
+
                 <!-- Analytics Agent -->
                 <div class="agent-card">
                     <span class="agent-icon">📊</span>
