@@ -10,6 +10,9 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
+    <!-- SQL.js - SQLite for Browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
     <!-- Iconoir Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
 
@@ -513,6 +516,10 @@
                     <span class="live-dot"></span>
                     <span>Live</span>
                 </div>
+                <button class="btn btn-secondary" onclick="showDatabaseStats()" title="Ver estatísticas do banco de dados">
+                    <i class="iconoir-database"></i>
+                    DB Stats
+                </button>
                 <button class="btn btn-secondary" onclick="exportData()">
                     <i class="iconoir-download"></i>
                     Exportar
@@ -676,6 +683,144 @@
     <div class="notifications" id="notifications"></div>
 
     <script>
+        // ========== SQLite Database Setup ==========
+        let db;
+        
+        async function initDatabase() {
+            try {
+                const SQL = await initSqlJs({
+                    locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/${file}`
+                });
+
+                // Try to load existing database from localStorage
+                const savedDb = localStorage.getItem('aviladb');
+                if (savedDb) {
+                    const uint8Array = new Uint8Array(JSON.parse(savedDb));
+                    db = new SQL.Database(uint8Array);
+                    console.log('✅ Database loaded from localStorage');
+                } else {
+                    db = new SQL.Database();
+                    console.log('✅ New database created');
+                }
+
+                // Create tables if they don't exist
+                db.run(`
+                    CREATE TABLE IF NOT EXISTS metrics (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        metric_name TEXT NOT NULL,
+                        metric_value REAL NOT NULL,
+                        metric_unit TEXT
+                    );
+                `);
+
+                db.run(`
+                    CREATE TABLE IF NOT EXISTS events (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        event_type TEXT NOT NULL,
+                        event_data TEXT,
+                        severity TEXT DEFAULT 'info'
+                    );
+                `);
+
+                db.run(`
+                    CREATE TABLE IF NOT EXISTS users_activity (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        user_count INTEGER NOT NULL,
+                        active_sessions INTEGER
+                    );
+                `);
+
+                console.log('✅ Tables created/verified');
+                
+                // Seed some initial data if database is new
+                if (!savedDb) {
+                    seedInitialData();
+                }
+
+                return db;
+            } catch (err) {
+                console.error('❌ Database initialization error:', err);
+                showNotification('Database Error', 'Failed to initialize SQLite database', 'danger');
+            }
+        }
+
+        // Save database to localStorage
+        function saveDatabase() {
+            if (db) {
+                const data = db.export();
+                const buffer = JSON.stringify(Array.from(data));
+                localStorage.setItem('aviladb', buffer);
+                console.log('💾 Database saved to localStorage');
+            }
+        }
+
+        // Seed initial data
+        function seedInitialData() {
+            const now = Date.now();
+            
+            // Add sample metrics
+            for (let i = 0; i < 24; i++) {
+                const timestamp = new Date(now - (24 - i) * 3600000).toISOString();
+                db.run('INSERT INTO metrics (timestamp, metric_name, metric_value, metric_unit) VALUES (?, ?, ?, ?)',
+                    [timestamp, 'events_per_min', Math.floor(Math.random() * 2000) + 500, 'count']);
+                db.run('INSERT INTO metrics (timestamp, metric_name, metric_value, metric_unit) VALUES (?, ?, ?, ?)',
+                    [timestamp, 'latency', Math.floor(Math.random() * 60) + 20, 'ms']);
+            }
+
+            // Add sample events
+            const eventTypes = ['user_login', 'api_call', 'database_query', 'cache_hit', 'error'];
+            const severities = ['info', 'warning', 'error'];
+            for (let i = 0; i < 50; i++) {
+                const timestamp = new Date(now - Math.random() * 86400000).toISOString();
+                db.run('INSERT INTO events (timestamp, event_type, event_data, severity) VALUES (?, ?, ?, ?)',
+                    [timestamp, eventTypes[Math.floor(Math.random() * eventTypes.length)], 
+                     JSON.stringify({ detail: 'Sample event data' }), 
+                     severities[Math.floor(Math.random() * severities.length)]]);
+            }
+
+            saveDatabase();
+            console.log('🌱 Initial data seeded');
+        }
+
+        // Query helpers
+        function queryMetrics(metricName, limit = 24) {
+            const stmt = db.prepare('SELECT * FROM metrics WHERE metric_name = ? ORDER BY timestamp DESC LIMIT ?');
+            stmt.bind([metricName, limit]);
+            const results = [];
+            while (stmt.step()) {
+                results.push(stmt.getAsObject());
+            }
+            stmt.free();
+            return results.reverse();
+        }
+
+        function insertMetric(metricName, value, unit = '') {
+            db.run('INSERT INTO metrics (metric_name, metric_value, metric_unit) VALUES (?, ?, ?)',
+                [metricName, value, unit]);
+            saveDatabase();
+        }
+
+        function getRecentEvents(limit = 10) {
+            const stmt = db.prepare('SELECT * FROM events ORDER BY timestamp DESC LIMIT ?');
+            stmt.bind([limit]);
+            const results = [];
+            while (stmt.step()) {
+                results.push(stmt.getAsObject());
+            }
+            stmt.free();
+            return results;
+        }
+
+        // Initialize database on load
+        initDatabase();
+
+        // Save database before page unload
+        window.addEventListener('beforeunload', saveDatabase);
+
+        // ========== Original Dashboard Code ==========
         // Generate time labels
         function generateTimeLabels(period) {
             const labels = [];
@@ -933,6 +1078,45 @@
             a.click();
 
             showNotification('success', 'Exportado', 'Dados exportados com sucesso!');
+        }
+
+        // Show Database Statistics
+        function showDatabaseStats() {
+            if (!db) {
+                showNotification('warning', 'Database', 'Database not initialized yet');
+                return;
+            }
+
+            try {
+                // Get counts
+                const metricsCount = db.exec('SELECT COUNT(*) as count FROM metrics')[0].values[0][0];
+                const eventsCount = db.exec('SELECT COUNT(*) as count FROM events')[0].values[0][0];
+                const usersCount = db.exec('SELECT COUNT(*) as count FROM users_activity')[0].values[0][0];
+
+                // Get recent events
+                const recentEvents = getRecentEvents(5);
+
+                // Get latest metrics
+                const latestMetrics = queryMetrics('events_per_min', 5);
+
+                console.log('%c📊 AVILA PULSE DATABASE STATS', 'font-size: 20px; font-weight: bold; color: #0A84FF;');
+                console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #BF5AF2;');
+                console.log(`\n📈 Total Metrics: ${metricsCount}`);
+                console.log(`🎯 Total Events: ${eventsCount}`);
+                console.log(`👥 User Activity Records: ${usersCount}`);
+                console.log(`\n💾 Database Size: ${JSON.stringify(Array.from(db.export())).length / 1024} KB`);
+                console.log('\n🔥 Recent Events:');
+                console.table(recentEvents);
+                console.log('\n📊 Latest Metrics:');
+                console.table(latestMetrics);
+                console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', 'color: #BF5AF2;');
+                console.log('%cTip: Use queryMetrics(), getRecentEvents(), or run custom SQL with db.exec()', 'color: #98989D; font-style: italic;');
+
+                showNotification('success', 'Database Stats', `${metricsCount} metrics, ${eventsCount} events logged. Check console (F12) for details.`);
+            } catch (err) {
+                console.error('Error getting database stats:', err);
+                showNotification('danger', 'Error', 'Failed to get database stats');
+            }
         }
 
         // Change chart period
