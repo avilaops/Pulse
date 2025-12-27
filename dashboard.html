@@ -685,7 +685,7 @@
     <script>
         // ========== SQLite Database Setup ==========
         let db;
-        
+
         async function initDatabase() {
             try {
                 const SQL = await initSqlJs({
@@ -734,7 +734,7 @@
                 `);
 
                 console.log('✅ Tables created/verified');
-                
+
                 // Seed some initial data if database is new
                 if (!savedDb) {
                     seedInitialData();
@@ -760,7 +760,7 @@
         // Seed initial data
         function seedInitialData() {
             const now = Date.now();
-            
+
             // Add sample metrics
             for (let i = 0; i < 24; i++) {
                 const timestamp = new Date(now - (24 - i) * 3600000).toISOString();
@@ -776,8 +776,8 @@
             for (let i = 0; i < 50; i++) {
                 const timestamp = new Date(now - Math.random() * 86400000).toISOString();
                 db.run('INSERT INTO events (timestamp, event_type, event_data, severity) VALUES (?, ?, ?, ?)',
-                    [timestamp, eventTypes[Math.floor(Math.random() * eventTypes.length)], 
-                     JSON.stringify({ detail: 'Sample event data' }), 
+                    [timestamp, eventTypes[Math.floor(Math.random() * eventTypes.length)],
+                     JSON.stringify({ detail: 'Sample event data' }),
                      severities[Math.floor(Math.random() * severities.length)]]);
             }
 
