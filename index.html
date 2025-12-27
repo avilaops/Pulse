@@ -36,7 +36,7 @@
             <div class="hero-badge">✨ Introducing Avila Pulse 2.0 - Now with TypeScript</div>
             <h1 id="hero-title">Think Different.<br>Decide Faster.</h1>
             <p class="hero-subtitle">Transform data into insights with real-time telemetry.<br>Built for teams that move at the speed of thought.</p>
-            
+
             <div class="hero-cta-group">
                 <a href="/dashboard.html" class="btn btn-primary">
                     Get Started <i class="iconoir-arrow-right"></i>
@@ -1112,7 +1112,7 @@
 
             animate() {
                 this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                
+
                 this.particles.forEach(p => {
                     p.x += p.vx;
                     p.y += p.vy;
@@ -1120,7 +1120,7 @@
                     const dx = this.mouse.x - p.x;
                     const dy = this.mouse.y - p.y;
                     const dist = Math.sqrt(dx * dx + dy * dy);
-                    
+
                     if (dist < 150) {
                         const force = (150 - dist) / 150;
                         p.vx += dx * force * 0.0008;
