@@ -1508,7 +1508,7 @@
         function toggleSettings() {
             const modal = document.getElementById('settingsModal');
             modal.classList.toggle('active');
-            
+
             if (modal.classList.contains('active')) {
                 loadSettings();
             }
@@ -1517,7 +1517,7 @@
         // Load settings from localStorage
         function loadSettings() {
             const settings = JSON.parse(localStorage.getItem('pulseSettings') || '{}');
-            
+
             document.getElementById('desktopNotifications').checked = settings.desktopNotifications || false;
             document.getElementById('errorAlerts').checked = settings.errorAlerts !== false;
             document.getElementById('soundAlerts').checked = settings.soundAlerts || false;
@@ -1544,7 +1544,7 @@
                 dbAutoSave: document.getElementById('dbAutoSave').checked,
                 dataRetention: document.getElementById('dataRetention').value
             };
-            
+
             localStorage.setItem('pulseSettings', JSON.stringify(settings));
             console.log('⚙️ Settings saved:', settings);
         }
