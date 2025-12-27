@@ -21,74 +21,31 @@
         }
 
         :root {
-            --primary: #0A84FF;
-            --secondary: #BF5AF2;
+            --primary: #007AFF;
+            --secondary: #5856D6;
             --success: #34C759;
-            --warning: #FFD60A;
-            --danger: #FF375F;
-            --purple: #BF5AF2;
-            --pink: #FF375F;
-            --gold: #FFD60A;
-            --dark: #000000;
-            --dark-light: #1D1D1F;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text: #F5F5F7;
-            --text-muted: #98989D;
-            --border: rgba(255, 255, 255, 0.1);
+            --warning: #FF9500;
+            --danger: #FF3B30;
+            --dark: #1D1D1F;
+            --dark-light: #F5F5F7;
+            --card-bg: #FFFFFF;
+            --text: #1D1D1F;
+            --text-muted: #6E6E73;
+            --border: rgba(0, 0, 0, 0.1);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: #000000;
+            background: #F5F5F7;
             color: var(--text);
             min-height: 100vh;
             font-weight: 400;
             letter-spacing: -0.01em;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Background Effects */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -200px;
-            left: -200px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(10, 132, 255, 0.15), transparent);
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: 0;
-            pointer-events: none;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -200px;
-            right: -200px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(191, 90, 242, 0.15), transparent);
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: 0;
-            pointer-events: none;
-            animation: float 10s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-20px) translateX(10px); }
-            50% { transform: translateY(-10px) translateX(-10px); }
-            75% { transform: translateY(-30px) translateX(5px); }
         }
 
         /* Header */
         .header {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             border-bottom: 1px solid var(--border);
@@ -112,7 +69,7 @@
             gap: 0.75rem;
             font-size: 1.5rem;
             font-weight: 600;
-            color: #F5F5F7;
+            color: #1D1D1F;
             text-decoration: none;
             letter-spacing: -0.02em;
         }
@@ -136,19 +93,19 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: #007AFF;
             color: white;
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #F5F5F7;
+            background: white;
+            color: #1D1D1F;
             border: 1px solid var(--border);
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(10, 132, 255, 0.3);
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         /* Sidebar */
@@ -156,17 +113,14 @@
             display: flex;
             max-width: 1600px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .sidebar {
             width: 250px;
-            background: rgba(255, 255, 255, 0.03);
+            background: white;
             border-right: 1px solid var(--border);
             padding: 2rem 1rem;
             min-height: calc(100vh - 70px);
-            backdrop-filter: blur(20px);
         }
 
         .sidebar-nav {
@@ -190,17 +144,14 @@
 
         .sidebar-nav a:hover,
         .sidebar-nav a.active {
-            background: rgba(10, 132, 255, 0.1);
+            background: #F5F5F7;
             color: var(--primary);
-            border-left: 3px solid var(--primary);
         }
 
         /* Main Content */
         .main-content {
             flex: 1;
             padding: 2rem;
-            position: relative;
-            z-index: 1;
         }
 
         /* Metrics Cards */
@@ -212,21 +163,13 @@
         }
 
         .metric-card {
-            background: var(--card-bg);
+            background: white;
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 1.5rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-        }
-
-        .metric-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(10, 132, 255, 0.5);
-            box-shadow: 0 12px 40px rgba(10, 132, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .metric-card::before {
@@ -235,8 +178,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            height: 0px;
+            background: transparent;
         }
 
         .metric-header {
@@ -260,10 +203,7 @@
         .metric-value {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #1D1D1F;
             margin-bottom: 0.5rem;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -293,18 +233,11 @@
         }
 
         .chart-card {
-            background: var(--card-bg);
+            background: white;
             border: 1px solid var(--border);
-            border-radius: 20px;
+            border-radius: 16px;
             padding: 1.5rem;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-        }
-
-        .chart-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(10, 132, 255, 0.5);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .chart-card canvas {
@@ -322,7 +255,7 @@
         .chart-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: #F5F5F7;
+            color: #1D1D1F;
             letter-spacing: -0.01em;
         }
 
@@ -335,7 +268,7 @@
             padding: 0.25rem 0.75rem;
             border-radius: 6px;
             border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.05);
+            background: transparent;
             color: var(--text-muted);
             font-size: 0.75rem;
             cursor: pointer;
@@ -344,9 +277,9 @@
 
         .chart-controls button.active,
         .chart-controls button:hover {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: var(--primary);
             color: white;
-            border-color: transparent;
+            border-color: var(--primary);
         }
 
         /* Notifications */
@@ -359,7 +292,7 @@
         }
 
         .notification {
-            background: rgba(0, 0, 0, 0.9);
+            background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 1rem;
@@ -367,8 +300,7 @@
             display: flex;
             gap: 1rem;
             animation: slideIn 0.3s ease-out;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
 
         @keyframes slideIn {
@@ -406,7 +338,7 @@
         .notification-title {
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: #F5F5F7;
+            color: #1D1D1F;
         }
 
         .notification-message {
@@ -710,9 +642,9 @@
             return data;
         }
 
-        // Chart.js default config for dark theme
-        Chart.defaults.color = '#98989D';
-        Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
+        // Chart.js default config
+        Chart.defaults.color = '#a1a1aa';
+        Chart.defaults.borderColor = 'rgba(102, 126, 234, 0.1)';
 
         // Events Chart
         const eventsCtx = document.getElementById('eventsChart').getContext('2d');
@@ -723,11 +655,10 @@
                 datasets: [{
                     label: 'Eventos/min',
                     data: generateData(24, 500, 2000, 10),
-                    borderColor: '#0A84FF',
-                    backgroundColor: 'rgba(10, 132, 255, 0.2)',
+                    borderColor: '#667eea',
+                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
                     tension: 0.4,
-                    fill: true,
-                    borderWidth: 2
+                    fill: true
                 }]
             },
             options: {
@@ -751,11 +682,10 @@
                 datasets: [{
                     label: 'Usuários',
                     data: generateData(24, 100, 500, 5),
-                    borderColor: '#34C759',
-                    backgroundColor: 'rgba(52, 199, 89, 0.2)',
+                    borderColor: '#22c55e',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
                     tension: 0.4,
-                    fill: true,
-                    borderWidth: 2
+                    fill: true
                 }]
             },
             options: {
@@ -779,11 +709,10 @@
                 datasets: [{
                     label: 'Latência (ms)',
                     data: generateData(24, 20, 80, -0.5),
-                    borderColor: '#FFD60A',
-                    backgroundColor: 'rgba(255, 214, 10, 0.2)',
+                    borderColor: '#eab308',
+                    backgroundColor: 'rgba(234, 179, 8, 0.1)',
                     tension: 0.4,
-                    fill: true,
-                    borderWidth: 2
+                    fill: true
                 }]
             },
             options: {
@@ -807,13 +736,11 @@
                 datasets: [{
                     data: [45, 25, 20, 10],
                     backgroundColor: [
-                        '#FF375F',
-                        '#FFD60A',
-                        '#BF5AF2',
-                        '#0A84FF'
-                    ],
-                    borderWidth: 2,
-                    borderColor: '#000000'
+                        '#ef4444',
+                        '#f97316',
+                        '#eab308',
+                        '#667eea'
+                    ]
                 }]
             },
             options: {
